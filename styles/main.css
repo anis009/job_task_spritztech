@@ -31,7 +31,7 @@
 
 body {
   font-family: "Inter", Arial, sans-serif;
-  background: #fff;
+  background: transparent;
   color: #222;
   margin: 0;
   padding: 0;
@@ -591,7 +591,8 @@ body {
   background: url("../assets/cloud.svg") no-repeat center/60px, #f5f6fa;
 }
 .features .features__card .features__card-img--analytics {
-  background: url("../assets/daily-analytics.svg") no-repeat center/60px, #f5f6fa;
+  background: url("../assets/daily-analytics.svg") no-repeat center/60px,
+    #f5f6fa;
 }
 
 .benefits {
