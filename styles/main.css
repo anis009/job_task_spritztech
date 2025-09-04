@@ -10,7 +10,7 @@
 /* SCSS Mixins */
 /* Layout styles for main containers */
 .container {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 1rem;
 }
