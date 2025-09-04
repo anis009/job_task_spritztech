@@ -1,0 +1,79 @@
+/* Main SCSS entry point */
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "layout";
+@import "components";
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #fff;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: transparent;
+  padding: 2rem 0 1.5rem 0;
+  .header__container {
+    @include flex-center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $primary-color;
+    letter-spacing: 0.5px;
+  }
+  .header__nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    li {
+      a {
+        color: $text-color;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+        &.active {
+          opacity: 1;
+          font-weight: 700;
+        }
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .header__actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    .header__login {
+      color: $text-color;
+      font-size: 1rem;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .button--signup {
+      background: #38e28f;
+      color: #fff;
+      font-weight: 600;
+      border-radius: $border-radius;
+      padding: 0.5rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(56,226,143,0.12);
+      transition: background 0.2s;
+      &:hover {
+        background: darken(#38e28f, 10%);
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+# Node modules and build artifacts
+node_modules/
+dist/
+build/
+.env
+.DS_Store
+*.log
+*.tmp
+.vscode/
+.idea/
+*.sass-cache/
+*.scssc
+*.map
