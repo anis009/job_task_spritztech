@@ -41,6 +41,11 @@ body {
   background: transparent;
   padding: 2rem 0 1.5rem 0;
 }
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 0;
+  }
+}
 .header .header__container {
   display: flex;
   justify-content: center;
@@ -48,16 +53,34 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .header .header__container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 .header .header__logo {
   font-size: 2rem;
   font-weight: 700;
   color: #0052cc;
   letter-spacing: 0.5px;
 }
+@media (max-width: 768px) {
+  .header .header__logo {
+    font-size: 1.5rem;
+  }
+}
 .header .header__nav ul {
   display: flex;
   gap: 2.5rem;
   list-style: none;
+}
+@media (max-width: 768px) {
+  .header .header__nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 .header .header__nav ul li a {
   color: #222;
@@ -66,6 +89,11 @@ body {
   text-decoration: none;
   opacity: 0.7;
   transition: opacity 0.2s;
+}
+@media (max-width: 768px) {
+  .header .header__nav ul li a {
+    font-size: 0.9rem;
+  }
 }
 .header .header__nav ul li a.active {
   opacity: 1;
@@ -79,6 +107,11 @@ body {
   gap: 1rem;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .header .header__actions {
+    gap: 0.5rem;
+  }
+}
 .header .header__actions .header__login {
   color: #222;
   font-size: 1rem;
@@ -86,25 +119,47 @@ body {
   opacity: 0.7;
   transition: opacity 0.2s;
 }
+@media (max-width: 768px) {
+  .header .header__actions .header__login {
+    font-size: 0.9rem;
+  }
+}
 .header .header__actions .header__login:hover {
   opacity: 1;
 }
 .header .header__actions .button--signup {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
   background: #38e28f;
   color: #fff;
   font-weight: 600;
   border-radius: 8px;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 2px 8px rgba(56, 226, 143, 0.12);
-  transition: background 0.2s;
+}
+@media (max-width: 768px) {
+  .header .header__actions .button--signup {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 .header .header__actions .button--signup:hover {
   background: rgb(29.3815789474, 201.6184210526, 117.5263157895);
+  transform: translateY(-2px);
 }
 
 .hero {
   padding: 4rem 0 3rem 0;
   background: linear-gradient(120deg, #f5f6fa 0%, #eafaf3 100%);
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 0;
+  }
 }
 .hero .hero__container {
   display: flex;
@@ -112,14 +167,24 @@ body {
   justify-content: space-between;
   gap: 2rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .hero .hero__container {
     flex-direction: column;
     gap: 3rem;
   }
 }
+@media (max-width: 768px) {
+  .hero .hero__container {
+    gap: 2rem;
+  }
+}
 .hero .hero__content {
   max-width: 540px;
+}
+@media (max-width: 768px) {
+  .hero .hero__content {
+    text-align: center;
+  }
 }
 .hero .hero__title {
   font-size: 3rem;
@@ -128,6 +193,17 @@ body {
   line-height: 1.1;
   margin-bottom: 1.5rem;
 }
+@media (max-width: 1024px) {
+  .hero .hero__title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+}
 .hero .hero__underline {
   width: 80%;
   height: 4px;
@@ -135,38 +211,65 @@ body {
   border-radius: 2px;
   margin: 1rem 0 2rem 0;
 }
+@media (max-width: 768px) {
+  .hero .hero__underline {
+    margin: 0.5rem auto 1.5rem auto;
+  }
+}
 .hero .hero__desc {
   font-size: 1.1rem;
   color: #222;
   opacity: 0.7;
   margin-bottom: 2rem;
 }
+@media (max-width: 768px) {
+  .hero .hero__desc {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
 .hero .hero__actions {
   display: flex;
   gap: 1.5rem;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .hero .hero__actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 .hero .hero__actions .button--trial {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
   background: #38e28f;
   color: #fff;
   font-weight: 600;
   border-radius: 8px;
   padding: 0.75rem 2rem;
   box-shadow: 0 2px 8px rgba(56, 226, 143, 0.12);
-  transition: background 0.2s;
 }
 .hero .hero__actions .button--trial:hover {
   background: rgb(29.3815789474, 201.6184210526, 117.5263157895);
+  transform: translateY(-2px);
 }
 .hero .hero__actions .hero__demo {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
   color: #222;
   font-size: 1rem;
-  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   opacity: 0.7;
-  transition: opacity 0.2s;
 }
 .hero .hero__actions .hero__demo:hover {
   opacity: 1;
@@ -174,6 +277,12 @@ body {
 .hero .hero__visual {
   position: relative;
   min-width: 340px;
+}
+@media (max-width: 768px) {
+  .hero .hero__visual {
+    min-width: 280px;
+    transform: scale(0.8);
+  }
 }
 .hero .hero__visual .hero__card-group {
   position: absolute;
@@ -191,6 +300,10 @@ body {
   padding: 1rem 1.5rem;
   font-size: 1rem;
   margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+.hero .hero__visual .hero__card:hover {
+  transform: translateY(-3px);
 }
 .hero .hero__visual .hero__card--input {
   min-width: 220px;
@@ -201,14 +314,17 @@ body {
   gap: 0.5rem;
 }
 .hero .hero__visual .hero__card--input .button--send {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
   background: #38e28f;
   color: #fff;
   border-radius: 8px;
   padding: 0.3rem 1rem;
   font-size: 0.95rem;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s;
 }
 .hero .hero__visual .hero__card--input .button--send:hover {
   background: rgb(29.3815789474, 201.6184210526, 117.5263157895);
@@ -286,7 +402,7 @@ body {
   gap: 3rem;
   justify-content: space-between;
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .support .support__container {
     flex-direction: column;
     gap: 2rem;
@@ -392,7 +508,7 @@ body {
   justify-content: space-between;
   gap: 2rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .features .features__header {
     flex-direction: column;
     align-items: flex-start;
@@ -430,7 +546,7 @@ body {
   flex-wrap: wrap;
   width: 100%;
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .features .features__cards {
     flex-direction: column;
     align-items: center;
@@ -487,7 +603,7 @@ body {
   gap: 3rem;
   justify-content: space-between;
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .benefits .benefits__container {
     flex-direction: column;
     gap: 2rem;
@@ -643,7 +759,7 @@ body {
   gap: 3rem;
   justify-content: space-between;
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .testimonials .testimonials__container {
     flex-direction: column;
     gap: 2rem;
