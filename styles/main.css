@@ -7,7 +7,7 @@
 }
 
 /* SCSS Variables */
-/* SCSS Mixins */
+/* Enhanced Reusable SCSS Mixins */
 /* Layout styles for main containers */
 .container {
   max-width: 1180px;
@@ -15,20 +15,309 @@
   padding: 0 1rem;
 }
 
-/* Component styles (buttons, cards, etc.) */
-.button {
-  background: #54bd95;
-  color: #fff;
-  border: none;
+/* Reusable Component Styles */
+/* Reusable Card Components */
+.card {
+  background: #fff;
   border-radius: 10px;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  transition: background 0.2s;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
 }
-.button:hover {
-  background: rgb(61.8085822785, 160.1404177215, 122.6806708861);
+.card__icon {
+  margin-bottom: 1rem;
+}
+.card__icon img,
+.card__icon svg {
+  width: 48px;
+  height: 48px;
+}
+.card__content {
+  text-align: center;
+}
+.card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+.card__desc {
+  font-size: 0.95rem;
+  color: #000000;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+.card--shadow {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+.card--shadow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+.card--bordered {
+  border: 1px solid #f5f6fa;
+}
+.card--bordered:hover {
+  border-color: #38e28f;
+}
+.card--hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.card--compact {
+  padding: 1rem;
+}
+.card--compact .card__title {
+  font-size: 1rem;
+}
+.card--compact .card__desc {
+  font-size: 0.9rem;
 }
 
+/* Reusable Button Components */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.button--primary {
+  background: #38e28f;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(56, 226, 143, 0.12);
+}
+.button--primary:hover {
+  background: rgb(32.2815789474, 221.5184210526, 129.1263157895);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 226, 143, 0.2);
+}
+.button--secondary {
+  background: transparent;
+  color: #000000;
+  border: 2px solid #f5f6fa;
+}
+.button--secondary:hover {
+  background: #f5f6fa;
+  color: #000000;
+}
+.button--outline {
+  background: transparent;
+  color: #38e28f;
+  border: 2px solid #38e28f;
+}
+.button--outline:hover {
+  background: #38e28f;
+  color: #fff;
+}
+.button--ghost {
+  background: transparent;
+  color: #000000;
+  opacity: 0.7;
+}
+.button--ghost:hover {
+  opacity: 1;
+  color: #38e28f;
+}
+.button--small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+.button--large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Reusable Utility Classes */
+.mt-1 {
+  margin-top: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 1rem;
+}
+
+.mt-3 {
+  margin-top: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.p-1 {
+  padding: 0.5rem;
+}
+
+.p-2 {
+  padding: 1rem;
+}
+
+.p-3 {
+  padding: 1.5rem;
+}
+
+.p-4 {
+  padding: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-primary {
+  color: #54bd95;
+}
+
+.text-accent {
+  color: #38e28f;
+}
+
+.text-muted {
+  opacity: 0.7;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gap-1 {
+  gap: 0.5rem;
+}
+
+.gap-2 {
+  gap: 1rem;
+}
+
+.gap-3 {
+  gap: 1.5rem;
+}
+
+.gap-4 {
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hidden-tablet {
+    display: none;
+  }
+}
+
+.show-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .show-mobile {
+    display: block;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 body {
   font-family: "Inter", Arial, sans-serif;
   background: #fff;
@@ -43,7 +332,7 @@ body {
 
 .header {
   background: transparent;
-  padding: 2rem 0 1.5rem 0;
+  padding-top: 40px;
 }
 @media (max-width: 768px) {
   .header {
@@ -51,6 +340,7 @@ body {
   }
 }
 .header .header__container {
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,6 +430,12 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
+}
+.header .header__actions .button--signup:focus {
+  outline: 2px solid #38e28f;
+  outline-offset: 2px;
+}
+.header .header__actions .button--signup {
   background: #38e28f;
   color: #fff;
   font-weight: 600;
@@ -159,7 +455,7 @@ body {
 }
 
 .hero {
-  padding: 4rem 0 3rem 0;
+  margin-top: 130px;
   background: transparent;
 }
 @media (max-width: 768px) {
@@ -245,6 +541,12 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
+}
+.hero .hero__actions .button--trial:focus {
+  outline: 2px solid #38e28f;
+  outline-offset: 2px;
+}
+.hero .hero__actions .button--trial {
   background: #54bd95;
   color: #fff;
   font-weight: 600;
@@ -263,6 +565,12 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
+}
+.hero .hero__actions .hero__demo:focus {
+  outline: 2px solid #38e28f;
+  outline-offset: 2px;
+}
+.hero .hero__actions .hero__demo {
   color: #000000;
   font-size: 18px;
   display: flex;
@@ -354,17 +662,17 @@ body {
 }
 
 .stats {
-  padding: 3rem 0 2rem 0;
+  padding: 130px 0px;
   background: transparent;
 }
 .stats .stats__container {
   text-align: center;
 }
 .stats .stats__title {
-  font-size: 2rem;
+  font-size: 40px;
   font-weight: 700;
-  color: #000000;
-  margin-bottom: 2rem;
+  color: #191a15;
+  margin-bottom: 60px;
 }
 .stats .stats__partners {
   display: flex;

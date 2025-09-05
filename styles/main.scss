@@ -5,6 +5,7 @@
 @use "mixins" as *;
 @use "layout";
 @use "components";
+@use "utilities";
 
 body {
   font-family: "Inter", Arial, sans-serif;
@@ -22,13 +23,14 @@ body {
 
 .header {
   background: transparent;
-  padding: 2rem 0 1.5rem 0;
+  padding-top: 40px;
 
   @include responsive(mobile) {
     padding: 1rem 0;
   }
 
   .header__container {
+    height: 40px;
     @include flex-center;
     justify-content: space-between;
     align-items: center;
@@ -135,7 +137,7 @@ body {
 }
 
 .hero {
-  padding: 4rem 0 3rem 0;
+  margin-top: 130px;
   background: transparent;
 
   @include responsive(mobile) {
@@ -328,16 +330,16 @@ body {
 }
 
 .stats {
-  padding: 3rem 0 2rem 0;
+  padding: 130px 0px;
   background: transparent;
   .stats__container {
     text-align: center;
   }
   .stats__title {
-    font-size: 2rem;
+    font-size: 40px;
     font-weight: 700;
-    color: $text-color;
-    margin-bottom: 2rem;
+    color: $secondary-text-color;
+    margin-bottom: 60px;
   }
   .stats__partners {
     display: flex;

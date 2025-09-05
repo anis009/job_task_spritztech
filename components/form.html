@@ -1,0 +1,30 @@
+<!-- Reusable Form Component -->
+<form class="form form--{{variant}}">
+  <div class="form__group">
+    <label class="form__label" for="{{id}}">{{label}}</label>
+    <input
+      class="form__input"
+      type="{{type}}"
+      id="{{id}}"
+      placeholder="{{placeholder}}"
+      {{required}}
+    />
+    <span class="form__error">{{error_message}}</span>
+  </div>
+
+  <div class="form__actions">
+    <button type="submit" class="button button--primary">
+      {{submit_text}}
+    </button>
+  </div>
+</form>
+
+<!-- Variants: default, dark, compact -->
+<!-- Usage Examples:
+<form class="form form--dark">
+  <div class="form__group">
+    <label class="form__label">Email</label>
+    <input class="form__input" type="email" placeholder="Enter your email" required />
+  </div>
+</form>
+-->
