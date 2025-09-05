@@ -7,3 +7,34 @@ $text-gray-color: #a6a6a6;
 $font-family: "Inter", Arial, sans-serif;
 $border-radius: 10px;
 $large-border-radius: 40px;
+
+// Additional variables needed for pricing section
+$white: #ffffff;
+$light-bg: #f9f8fe;
+
+// Font sizes
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 18px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+
+// Font weights
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Spacing
+$space-xs: 8px;
+$space-sm: 16px;
+$space-md: 24px;
+$space-lg: 32px;
+$space-xl: 48px;
+$space-xxl: 64px;
+
+// Shadows
+$medium-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$large-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+// Transitions
+$transition-medium: all 0.3s ease;

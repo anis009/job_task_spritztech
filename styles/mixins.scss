@@ -55,7 +55,7 @@
 @mixin card-base {
   background: #fff;
   border-radius: 8px;
-  padding: 1.5rem;
+
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -118,5 +118,37 @@
   @include responsive(mobile) {
     grid-template-columns: 1fr;
     gap: ($gap * 0.5);
+  }
+}
+
+// Additional mixins needed for pricing section
+@mixin grid-layout($columns, $gap) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
+}
+
+@mixin section-title {
+  font-size: 50px;
+  font-weight: 700;
+  color: #191a15;
+  line-height: 1.2;
+
+  @include responsive(tablet) {
+    font-size: 2rem;
+  }
+
+  @include responsive(mobile) {
+    font-size: 1.75rem;
+  }
+}
+
+@mixin section-description {
+  font-size: 18px;
+  line-height: 30px;
+  color: #a6a6a6;
+
+  @include responsive(mobile) {
+    font-size: 0.9rem;
   }
 }

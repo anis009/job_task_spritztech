@@ -650,48 +650,270 @@ body {
 }
 
 .pricing {
-  padding: 4rem 0 3rem 0;
-  background: linear-gradient(120deg, #f5f6fa 0%, #eafaf3 100%);
-  .pricing__container {
+  padding: 25px 20px;
+  background: $light-bg;
+
+  &__container {
     text-align: center;
+  }
+
+  &__title {
+    @include section-title;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    @include section-description;
+    margin-bottom: 40px;
     max-width: 600px;
-    margin: 0 auto;
-  }
-  .pricing__title {
-    font-size: 2rem;
     font-weight: 700;
-    color: $text-color;
-    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .pricing__desc {
-    font-size: 1rem;
-    color: $text-color;
-    opacity: 0.7;
-    margin-bottom: 2rem;
-  }
-  .pricing__options {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 1.5rem;
-    .pricing__option {
-      background: #fff;
-      color: $text-color;
-      font-weight: 600;
+
+  &__toggle {
+    @include flex-center;
+    gap: 10px;
+    margin-bottom: 89px;
+    background: $white;
+    border-radius: $border-radius;
+    padding: 4px;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: $medium-shadow;
+
+    &-btn {
+      @include button-base;
+      padding: 13px 40px;
       border-radius: $border-radius;
-      padding: 0.7rem 2rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+      background: transparent;
+      color: $text-color;
       border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.2s, color 0.2s;
+      flex: 1;
+      white-space: nowrap;
+
       &--active {
-        background: #38e28f;
-        color: #fff;
+        background: $primary-color;
+        color: $white;
+        font-weight: $font-weight-semibold;
       }
+
+      &:hover:not(&--active) {
+        background: rgba($primary-color, 0.1);
+      }
+    }
+  }
+
+  &__cards {
+    @include grid-layout(repeat(auto-fit, minmax(320px, 1fr)), $space-lg);
+    max-width: 1180px;
+    margin: 0 auto;
+
+    @include responsive(mobile) {
+      @include grid-layout(1fr, $space-md);
+    }
+  }
+
+  &__card {
+    @include card-base;
+    padding: 25px 20px;
+    text-align: center;
+    position: relative;
+    transition: $transition-medium;
+    background: $white;
+
+    &--popular {
+      border: 2px solid $primary-color;
+      transform: scale(1.05);
+      background: $primary-color;
+      color: $white;
+
+      .pricing__card-header,
+      .price__type,
+      .pricing__card-subtitle,
+      .price__features li {
+        color: $secondary-text-color;
+      }
+
+      .price__amount {
+        color: $white;
+      }
+
+      .price__currency {
+        color: $white;
+      }
+
+      .price__period {
+        background: rgba(255, 255, 255, 0.2);
+        color: $white;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: $white;
+        color: $primary-color;
+        padding: 6px 20px;
+        border-radius: $border-radius;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-bold;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $large-shadow;
+
+      &.pricing__card--popular {
+        transform: scale(1.05) translateY(-8px);
+      }
+    }
+
+    &-header {
+      margin-bottom: $space-lg;
+    }
+
+    &-subtitle {
+      font-size: $font-size-sm;
+      color: $text-color;
+      opacity: 0.8;
+      margin-top: $space-xs;
+      line-height: 1.4;
+    }
+
+    &-price {
+      margin-bottom: $space-lg;
+      position: relative;
+    }
+  }
+}
+
+.price {
+  &__type {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $secondary-text-color;
+    margin-bottom: $space-xs;
+  }
+
+  &__currency {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $secondary-text-color;
+    vertical-align: top;
+  }
+
+  &__amount {
+    font-size: 4rem;
+    font-weight: $font-weight-bold;
+    color: $secondary-text-color;
+    line-height: 1;
+
+    .pricing__card--popular & {
+      color: $white;
+    }
+  }
+
+  &__period {
+    display: block;
+    font-size: $font-size-xs;
+    color: $white;
+    background: $primary-color;
+    padding: 4px 12px;
+    border-radius: $border-radius;
+    margin-top: $space-xs;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    font-weight: $font-weight-medium;
+
+    .pricing__card:not(.pricing__card--popular) & {
+      background: $primary-color;
+      color: $white;
+    }
+  }
+  &__features_container:not(.price__features_container--popular) {
+    background: #f9fafb;
+    border-radius: $border-radius;
+    padding: 26px 31px 0px 37px;
+  }
+  &__features_container--popular {
+    background: #fff;
+    border-radius: $border-radius;
+    padding: 26px 31px 0px 37px;
+  }
+  &__features {
+    list-style: none;
+    margin-bottom: $space-lg;
+    text-align: left;
+
+    li {
+      @include flex-center;
+      justify-content: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: $font-size-sm;
+      color: $text-color;
+      font-weight: $font-weight-medium;
+
+      &::before {
+        content: "✓";
+        color: $primary-color;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-sm;
+        width: 20px;
+        height: 20px;
+        background: rgba($primary-color, 0.1);
+        border-radius: 50%;
+        @include flex-center;
+        flex-shrink: 0;
+
+        .pricing__card--popular & {
+          color: $white;
+          background: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      .pricing__card--popular & {
+        color: $secondary-text-color;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    @include button-base;
+    padding: 16px 24px;
+    border-radius: $border-radius;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+
+    &--primary {
+      background: $white;
+      color: $primary-color;
+      border: 2px solid $white;
+
       &:hover {
-        background: #38e28f;
-        color: #fff;
+        background: transparent;
+        color: $white;
+        border-color: $white;
+      }
+    }
+
+    &--secondary {
+      background: transparent;
+      color: $primary-color;
+      border: 2px solid $primary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
       }
     }
   }
