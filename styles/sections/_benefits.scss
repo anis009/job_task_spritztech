@@ -1,0 +1,74 @@
+@use "sass:color";
+@use "../variables" as *;
+@use "../mixins" as *;
+.benefits {
+  padding: 50px 0 50px 0;
+  background: transparent;
+  .benefits__container {
+    display: flex;
+
+    justify-content: space-between;
+    @include responsive(tablet) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+  .benefits__main {
+    max-width: 500px;
+  }
+  .benefits__title {
+    font-size: 50px;
+    font-weight: 700;
+    color: $secondary-text-color;
+    margin-bottom: 50px;
+  }
+  .benefits__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      line-height: 30px;
+      gap: 20px;
+      color: $secondary-text-color;
+      font-weight: 500;
+    }
+  }
+  .benefits__visual {
+    position: relative;
+    min-width: 340px;
+
+    .benefits__image-bg {
+      max-width: 450px;
+      max-height: 529px;
+
+      border-radius: $border-radius;
+    }
+
+    .benefits__extra-saving {
+      position: absolute;
+      top: 36px;
+      left: -200px;
+    }
+    .benefits__income {
+      position: absolute;
+      top: 121px;
+      right: -78px;
+    }
+    .benefits__transfer {
+      position: absolute;
+      bottom: -23px;
+      left: -113px;
+    }
+    .benefits__image {
+      position: absolute;
+      left: -73px;
+      top: 275px;
+    }
+  }
+}

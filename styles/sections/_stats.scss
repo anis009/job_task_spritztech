@@ -1,0 +1,38 @@
+@use "sass:color";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.stats {
+  padding: 130px 0px;
+  background: transparent;
+  .stats__container {
+    text-align: center;
+  }
+  .stats__title {
+    font-size: 40px;
+    font-weight: 700;
+    color: $secondary-text-color;
+    margin-bottom: 60px;
+  }
+  .stats__partners {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  .stats__partner {
+    display: flex;
+    align-items: center;
+    img {
+      height: 32px;
+      width: auto;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

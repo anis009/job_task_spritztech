@@ -1,0 +1,115 @@
+@use "sass:color";
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.features {
+  padding: 130px 0 80px 0;
+  background: linear-gradient(120deg, #f5f6fa 0%, #eafaf3 100%);
+  .features__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .features__header {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 111px;
+    @include responsive(tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+  }
+  .features__title {
+    font-size: 48px;
+    font-weight: 600;
+    color: $secondary-text-color;
+    margin-bottom: 0.5rem;
+    max-width: 331px;
+  }
+  .features__desc {
+    font-size: 18px;
+    color: $text-gray-color;
+    line-height: 30px;
+    max-width: 461px;
+  }
+  .button--getstarted {
+    background: $primary-color;
+    color: #fff;
+    font-weight: 500;
+    border-radius: $large-border-radius;
+    padding: 18px 31px;
+    box-shadow: 0 2px 8px rgba(56, 226, 143, 0.12);
+    transition: background 0.2s;
+    white-space: nowrap;
+    font-size: 18px;
+    line-height: 30px;
+    &:hover {
+      background: color.scale(#38e28f, $lightness: -18%);
+    }
+  }
+  .features__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 44px;
+    justify-content: center;
+
+    width: 100%;
+    @include responsive(tablet) {
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+  }
+  .features__card {
+    background: transparent;
+
+    min-width: 260px;
+    max-width: 364px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    h3 {
+      font-size: 30px;
+      font-weight: 600;
+      margin: 30px 0px;
+      text-align: left;
+      width: 100%;
+    }
+    p {
+      font-size: 18px;
+      color: $text-gray-color;
+      line-height: 30px;
+      text-align: left;
+    }
+
+    img {
+      width: 100%;
+    }
+    .features__card-img {
+      width: 100px;
+      height: 80px;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      background: $secondary-color;
+      &--collab {
+        background: url("../assets/collab.svg") no-repeat center/60px,
+          $secondary-color;
+      }
+      &--cloud {
+        background: url("../assets/cloud.svg") no-repeat center/60px,
+          $secondary-color;
+      }
+      &--analytics {
+        background: url("../assets/daily-analytics.svg") no-repeat center/60px,
+          $secondary-color;
+      }
+    }
+  }
+}

@@ -11,3 +11,4 @@ build/
 *.sass-cache/
 *.scssc
 *.map
+.vercel
