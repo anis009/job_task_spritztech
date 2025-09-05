@@ -17,24 +17,28 @@
 
 /* Component styles (buttons, cards, etc.) */
 .button {
-  background: #0052cc;
+  background: #54bd95;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0.75rem 1.5rem;
   cursor: pointer;
   transition: background 0.2s;
 }
 .button:hover {
-  background: rgb(0, 61.5, 153);
+  background: rgb(61.8085822785, 160.1404177215, 122.6806708861);
 }
 
 body {
   font-family: "Inter", Arial, sans-serif;
-  background: transparent;
+  background: #fff;
   color: #222;
   margin: 0;
   padding: 0;
+}
+
+.top-section {
+  background: linear-gradient(145deg, #f6faf8 0%, #f2f7f4 100%);
 }
 
 .header {
@@ -60,10 +64,11 @@ body {
   }
 }
 .header .header__logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #0052cc;
+  font-size: 50px;
+  font-weight: 600;
+  color: #54bd95;
   letter-spacing: 0.5px;
+  line-height: 30px;
 }
 @media (max-width: 768px) {
   .header .header__logo {
@@ -83,8 +88,9 @@ body {
   }
 }
 .header .header__nav ul li a {
-  color: #222;
-  font-size: 1rem;
+  color: #000000;
+  font-size: 16px;
+  line-height: 100%;
   font-weight: 500;
   text-decoration: none;
   opacity: 0.7;
@@ -113,7 +119,7 @@ body {
   }
 }
 .header .header__actions .header__login {
-  color: #222;
+  color: #000000;
   font-size: 1rem;
   text-decoration: none;
   opacity: 0.7;
@@ -137,7 +143,7 @@ body {
   background: #38e28f;
   color: #fff;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0.5rem 1.5rem;
   box-shadow: 0 2px 8px rgba(56, 226, 143, 0.12);
 }
@@ -148,13 +154,13 @@ body {
   }
 }
 .header .header__actions .button--signup:hover {
-  background: rgb(29.3815789474, 201.6184210526, 117.5263157895);
+  background: rgb(29.4121052632, 201.8278947368, 117.6484210526);
   transform: translateY(-2px);
 }
 
 .hero {
   padding: 4rem 0 3rem 0;
-  background: linear-gradient(120deg, #f5f6fa 0%, #eafaf3 100%);
+  background: transparent;
 }
 @media (max-width: 768px) {
   .hero {
@@ -165,7 +171,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 35px;
 }
 @media (max-width: 1024px) {
   .hero .hero__container {
@@ -187,11 +193,11 @@ body {
   }
 }
 .hero .hero__title {
-  font-size: 3rem;
+  font-size: 80px;
   font-weight: 700;
-  color: #222;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  color: #191a15;
+  line-height: 90px;
+  margin-bottom: 30px;
 }
 @media (max-width: 1024px) {
   .hero .hero__title {
@@ -205,22 +211,14 @@ body {
   }
 }
 .hero .hero__underline {
-  width: 80%;
-  height: 4px;
-  background: #0052cc;
-  border-radius: 2px;
-  margin: 1rem 0 2rem 0;
-}
-@media (max-width: 768px) {
-  .hero .hero__underline {
-    margin: 0.5rem auto 1.5rem auto;
-  }
+  margin-bottom: 50px;
 }
 .hero .hero__desc {
-  font-size: 1.1rem;
-  color: #222;
-  opacity: 0.7;
-  margin-bottom: 2rem;
+  font-size: 18px;
+  line-height: 30px;
+  color: #000000;
+  margin-bottom: 50px;
+  font-weight: 500;
 }
 @media (max-width: 768px) {
   .hero .hero__desc {
@@ -232,6 +230,7 @@ body {
   display: flex;
   gap: 1.5rem;
   align-items: center;
+  position: relative;
 }
 @media (max-width: 768px) {
   .hero .hero__actions {
@@ -246,15 +245,15 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
-  background: #38e28f;
+  background: #54bd95;
   color: #fff;
   font-weight: 600;
-  border-radius: 8px;
-  padding: 0.75rem 2rem;
+  border-radius: 40px;
+  padding: 20px 30px;
   box-shadow: 0 2px 8px rgba(56, 226, 143, 0.12);
 }
 .hero .hero__actions .button--trial:hover {
-  background: rgb(29.3815789474, 201.6184210526, 117.5263157895);
+  background: rgb(62.3407594937, 161.5192405063, 123.7369620253);
   transform: translateY(-2px);
 }
 .hero .hero__actions .hero__demo {
@@ -264,19 +263,18 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
-  color: #222;
-  font-size: 1rem;
+  color: #000000;
+  font-size: 18px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  opacity: 0.7;
 }
 .hero .hero__actions .hero__demo:hover {
   opacity: 1;
 }
 .hero .hero__visual {
-  position: relative;
   min-width: 340px;
+  position: relative;
 }
 @media (max-width: 768px) {
   .hero .hero__visual {
@@ -293,64 +291,61 @@ body {
   gap: 1.5rem;
   z-index: 2;
 }
+.hero .hero__visual .hero__db {
+  position: absolute;
+  top: 26px;
+  right: -34px;
+}
 .hero .hero__visual .hero__card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  transition: transform 0.3s ease;
+  position: absolute;
+  bottom: 21px;
+  right: -111px;
 }
-.hero .hero__visual .hero__card:hover {
-  transform: translateY(-3px);
+.hero .hero__visual .hero__income {
+  position: absolute;
+  bottom: 21px;
+  left: -73px;
 }
-.hero .hero__visual .hero__card--input {
-  min-width: 220px;
+.hero .hero__visual .hero__chat {
+  position: absolute;
+  bottom: -28px;
+  right: 31px;
 }
-.hero .hero__visual .hero__card--input .hero__card-row {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.hero .hero__visual .hero__amount {
+  position: absolute;
+  top: 30px;
+  left: -182px;
 }
-.hero .hero__visual .hero__card--input .button--send {
-  display: inline-block;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: inherit;
-  background: #38e28f;
-  color: #fff;
-  border-radius: 8px;
-  padding: 0.3rem 1rem;
-  font-size: 0.95rem;
+.hero .hero__visual .hero__check {
+  position: absolute;
+  top: 173px;
+  left: -65px;
 }
-.hero .hero__visual .hero__card--input .button--send:hover {
-  background: rgb(29.3815789474, 201.6184210526, 117.5263157895);
+.hero .hero__visual .hero__visual__image {
+  max-width: 100%;
+  height: 558px;
+  width: 702px;
+  position: absolute;
+  top: 0px;
+  right: -40px;
 }
-.hero .hero__visual .hero__card--income {
-  min-width: 140px;
-  margin-top: 1.5rem;
+@media (max-width: 1024px) {
+  .hero .hero__visual .hero__visual__image {
+    width: 100%;
+    max-width: 500px;
+  }
 }
-.hero .hero__visual .hero__card--credit {
-  min-width: 140px;
-  margin-top: 1.5rem;
-}
-.hero .hero__visual .hero__card .hero__card-value {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #222;
-}
-.hero .hero__visual .hero__card .hero__card-date {
-  font-size: 0.9rem;
-  color: #888;
+@media (max-width: 768px) {
+  .hero .hero__visual .hero__visual__image {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 .hero .hero__visual .hero__image-bg {
   width: 320px;
   height: 340px;
   background: #ffd600;
-  border-radius: 8px;
+  border-radius: 10px;
   position: relative;
   z-index: 1;
   margin-left: 60px;
@@ -360,7 +355,7 @@ body {
 
 .stats {
   padding: 3rem 0 2rem 0;
-  background: linear-gradient(120deg, #f5f6fa 0%, #eafaf3 100%);
+  background: transparent;
 }
 .stats .stats__container {
   text-align: center;
@@ -368,7 +363,7 @@ body {
 .stats .stats__title {
   font-size: 2rem;
   font-weight: 700;
-  color: #222;
+  color: #000000;
   margin-bottom: 2rem;
 }
 .stats .stats__partners {
@@ -414,12 +409,12 @@ body {
 .support .support__title {
   font-size: 2rem;
   font-weight: 700;
-  color: #222;
+  color: #000000;
   margin-bottom: 1.5rem;
 }
 .support .support__desc {
   font-size: 1rem;
-  color: #222;
+  color: #000000;
   opacity: 0.7;
   margin-bottom: 2rem;
 }
@@ -430,7 +425,7 @@ body {
 }
 .support .support__rating {
   background: #f5f6fa;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -445,7 +440,7 @@ body {
 .support .support__rating .support__score {
   font-size: 1rem;
   font-weight: 600;
-  color: #222;
+  color: #000000;
 }
 .support .support__rating .support__brand {
   font-size: 0.95rem;
@@ -469,7 +464,7 @@ body {
 }
 .support .support__features .support__feature p {
   font-size: 0.98rem;
-  color: #222;
+  color: #000000;
   opacity: 0.7;
 }
 .support .support__features .support__feature .support__icon {
@@ -518,12 +513,12 @@ body {
 .features .features__title {
   font-size: 2rem;
   font-weight: 700;
-  color: #222;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 .features .features__desc {
   font-size: 1rem;
-  color: #222;
+  color: #000000;
   opacity: 0.7;
   max-width: 400px;
 }
@@ -531,13 +526,13 @@ body {
   background: #38e28f;
   color: #fff;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0.7rem 2rem;
   box-shadow: 0 2px 8px rgba(56, 226, 143, 0.12);
   transition: background 0.2s;
 }
 .features .button--getstarted:hover {
-  background: rgb(29.3815789474, 201.6184210526, 117.5263157895);
+  background: rgb(29.4121052632, 201.8278947368, 117.6484210526);
 }
 .features .features__cards {
   display: flex;
@@ -555,7 +550,7 @@ body {
 }
 .features .features__card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   padding: 2rem 1.5rem;
   min-width: 260px;
@@ -573,7 +568,7 @@ body {
 }
 .features .features__card p {
   font-size: 0.98rem;
-  color: #222;
+  color: #000000;
   opacity: 0.7;
   text-align: center;
 }
@@ -591,8 +586,7 @@ body {
   background: url("../assets/cloud.svg") no-repeat center/60px, #f5f6fa;
 }
 .features .features__card .features__card-img--analytics {
-  background: url("../assets/daily-analytics.svg") no-repeat center/60px,
-    #f5f6fa;
+  background: url("../assets/daily-analytics.svg") no-repeat center/60px, #f5f6fa;
 }
 
 .benefits {
@@ -616,7 +610,7 @@ body {
 .benefits .benefits__title {
   font-size: 2rem;
   font-weight: 700;
-  color: #222;
+  color: #000000;
   margin-bottom: 1.5rem;
 }
 .benefits .benefits__list {
@@ -631,7 +625,7 @@ body {
   display: flex;
   align-items: center;
   font-size: 1.05rem;
-  color: #222;
+  color: #000000;
 }
 .benefits .benefits__list li .benefits__icon {
   width: 24px;
@@ -659,7 +653,7 @@ body {
 }
 .benefits .benefits__visual .benefits__card {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   padding: 1rem 1.5rem;
   font-size: 1rem;
@@ -684,7 +678,7 @@ body {
 .benefits .benefits__visual .benefits__card--income .benefits__card-value {
   font-weight: 700;
   font-size: 1.1rem;
-  color: #222;
+  color: #000000;
 }
 .benefits .benefits__visual .benefits__card--transfer {
   min-width: 180px;
@@ -694,7 +688,7 @@ body {
   width: 320px;
   height: 220px;
   background: #f5f6fa;
-  border-radius: 8px;
+  border-radius: 10px;
   position: relative;
   z-index: 1;
   margin-left: 60px;
@@ -714,12 +708,12 @@ body {
 .pricing .pricing__title {
   font-size: 2rem;
   font-weight: 700;
-  color: #222;
+  color: #000000;
   margin-bottom: 1rem;
 }
 .pricing .pricing__desc {
   font-size: 1rem;
-  color: #222;
+  color: #000000;
   opacity: 0.7;
   margin-bottom: 2rem;
 }
@@ -731,9 +725,9 @@ body {
 }
 .pricing .pricing__options .pricing__option {
   background: #fff;
-  color: #222;
+  color: #000000;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0.7rem 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: none;
@@ -822,11 +816,11 @@ body {
   transition: background 0.2s;
 }
 .testimonials .testimonials__avatars .testimonials__play:hover {
-  background: rgb(29.3815789474, 201.6184210526, 117.5263157895);
+  background: rgb(29.4121052632, 201.8278947368, 117.6484210526);
 }
 .testimonials .testimonials__form {
   background: #23272f;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 2rem 2.5rem;
   min-width: 320px;
   max-width: 400px;
@@ -852,7 +846,7 @@ body {
   background: #222;
   color: #fff;
   border: 1px solid #444;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0.7rem 1rem;
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -862,7 +856,7 @@ body {
   background: #38e28f;
   color: #fff;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0.7rem 2rem;
   box-shadow: 0 2px 8px rgba(56, 226, 143, 0.12);
   border: none;
@@ -870,7 +864,7 @@ body {
   transition: background 0.2s;
 }
 .testimonials .testimonials__form form .button--demo:hover {
-  background: rgb(29.3815789474, 201.6184210526, 117.5263157895);
+  background: rgb(29.4121052632, 201.8278947368, 117.6484210526);
 }
 .testimonials .testimonials__form form .testimonials__form-link {
   color: #fff;
@@ -914,7 +908,7 @@ body {
   background: #23272f;
   color: #fff;
   border: 1px solid #444;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0.7rem 1rem;
   font-size: 1rem;
   min-width: 220px;
@@ -931,7 +925,7 @@ body {
   transition: background 0.2s;
 }
 .footer .footer__main .footer__newsletter .footer__newsletter-btn:hover {
-  background: rgb(29.3815789474, 201.6184210526, 117.5263157895);
+  background: rgb(29.4121052632, 201.8278947368, 117.6484210526);
 }
 .footer .footer__main .footer__copyright {
   font-size: 0.95rem;

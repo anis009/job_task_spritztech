@@ -1,4 +1,7 @@
 /* Component styles (buttons, cards, etc.) */
+@use "sass:color";
+@use "variables" as *;
+
 .button {
   background: $primary-color;
   color: #fff;
@@ -8,6 +11,6 @@
   cursor: pointer;
   transition: background 0.2s;
   &:hover {
-    background: darken($primary-color, 10%);
+    background: color.scale($primary-color, $lightness: -18.7%);
   }
 }
