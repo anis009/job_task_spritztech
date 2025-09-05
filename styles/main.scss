@@ -466,7 +466,7 @@ body {
 }
 
 .features {
-  padding: 113px 0 113px 0;
+  padding: 130px 0 80px 0;
   background: linear-gradient(120deg, #f5f6fa 0%, #eafaf3 100%);
   .features__container {
     display: flex;
@@ -578,11 +578,11 @@ body {
 }
 
 .benefits {
-  padding: 4rem 0 3rem 0;
-  background: #fff;
+  padding: 50px 0 50px 0;
+  background: transparent;
   .benefits__container {
     display: flex;
-    gap: 3rem;
+
     justify-content: space-between;
     @include responsive(tablet) {
       flex-direction: column;
@@ -590,13 +590,13 @@ body {
     }
   }
   .benefits__main {
-    max-width: 420px;
+    max-width: 500px;
   }
   .benefits__title {
-    font-size: 2rem;
+    font-size: 50px;
     font-weight: 700;
-    color: $text-color;
-    margin-bottom: 1.5rem;
+    color: $secondary-text-color;
+    margin-bottom: 50px;
   }
   .benefits__list {
     list-style: none;
@@ -608,76 +608,43 @@ body {
     li {
       display: flex;
       align-items: center;
-      font-size: 1.05rem;
-      color: $text-color;
-      .benefits__icon {
-        width: 24px;
-        height: 24px;
-        background: #38e28f;
-        border-radius: 50%;
-        display: inline-block;
-        margin-right: 0.8rem;
-        position: relative;
-        &::after {
-          content: "";
-          display: block;
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background: #fff;
-          position: absolute;
-          top: 7px;
-          left: 7px;
-        }
-      }
+      font-size: 18px;
+      line-height: 30px;
+      gap: 20px;
+      color: $secondary-text-color;
+      font-weight: 500;
     }
   }
   .benefits__visual {
     position: relative;
     min-width: 340px;
-    .benefits__card {
-      background: #fff;
-      border-radius: $border-radius;
-      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-      padding: 1rem 1.5rem;
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      &--user {
-        min-width: 180px;
-        margin-bottom: 1.2rem;
-        .benefits__user-name {
-          font-weight: 700;
-          font-size: 1.1rem;
-        }
-        .benefits__user-role {
-          font-size: 0.95rem;
-          color: #888;
-        }
-      }
-      &--income {
-        min-width: 140px;
-        margin-bottom: 1.2rem;
-        .benefits__card-value {
-          font-weight: 700;
-          font-size: 1.1rem;
-          color: $text-color;
-        }
-      }
-      &--transfer {
-        min-width: 180px;
-        margin-bottom: 1.2rem;
-      }
-    }
+
     .benefits__image-bg {
-      width: 320px;
-      height: 220px;
-      background: #f5f6fa;
+      max-width: 450px;
+      max-height: 529px;
+
       border-radius: $border-radius;
-      position: relative;
-      z-index: 1;
-      margin-left: 60px;
-      margin-top: 30px;
-      box-shadow: 0 4px 32px rgba(56, 226, 143, 0.12);
+    }
+
+    .benefits__extra-saving {
+      position: absolute;
+      top: 36px;
+      left: -200px;
+    }
+    .benefits__income {
+      position: absolute;
+      top: 121px;
+      right: -78px;
+    }
+    .benefits__transfer {
+      position: absolute;
+      bottom: -23px;
+      left: -113px;
+    }
+    .benefits__image {
+      position: absolute;
+      left: -73px;
+      top: 275px;
     }
   }
 }
