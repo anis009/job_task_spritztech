@@ -697,12 +697,12 @@ body {
 }
 
 .support {
-  padding: 4rem 0 3rem 0;
-  background: #fff;
+  padding: 60px 0 70px 0;
+  background: #f9f8fe;
 }
 .support .support__container {
   display: flex;
-  gap: 3rem;
+  gap: 27px;
   justify-content: space-between;
 }
 @media (max-width: 1024px) {
@@ -712,68 +712,71 @@ body {
   }
 }
 .support .support__main {
-  max-width: 520px;
+  max-width: 644px;
 }
 .support .support__title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #000000;
-  margin-bottom: 1.5rem;
+  font-size: 50px;
+  font-weight: 600;
+  color: #191a15;
+  margin-bottom: 30px;
 }
 .support .support__desc {
   font-size: 1rem;
-  color: #000000;
-  opacity: 0.7;
-  margin-bottom: 2rem;
+  color: #a6a6a6;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 73px;
 }
 .support .support__ratings {
   display: flex;
-  gap: 2rem;
-  margin-top: 1rem;
+  gap: 80px;
 }
 .support .support__rating {
-  background: #f5f6fa;
+  background: transparent;
   border-radius: 10px;
-  padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 3px;
 }
 .support .support__rating .support__stars {
   color: #ffd600;
-  font-size: 1.2rem;
+  font-size: 26px;
   font-weight: 700;
 }
 .support .support__rating .support__score {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+  color: #191a15;
+  padding: 18px 0px;
 }
 .support .support__rating .support__brand {
-  font-size: 0.95rem;
-  color: #888;
+  font-size: 18px;
+  color: #a6a6a6;
+  font-weight: 700;
 }
 .support .support__features {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 21px;
   min-width: 320px;
 }
 .support .support__features .support__feature {
   display: flex;
   gap: 1.2rem;
   align-items: flex-start;
+  margin-bottom: 30px;
 }
 .support .support__features .support__feature h3 {
-  font-size: 1.1rem;
+  font-size: 27px;
   font-weight: 700;
-  margin-bottom: 0.3rem;
+  margin-bottom: 10px;
+  color: #191a15;
 }
 .support .support__features .support__feature p {
-  font-size: 0.98rem;
-  color: #000000;
-  opacity: 0.7;
+  font-size: 18px;
+  color: #a6a6a6;
+  line-height: 30px;
 }
 .support .support__features .support__feature .support__icon {
   width: 40px;
