@@ -379,6 +379,8 @@
   text-decoration: none;
   opacity: 0.7;
   transition: opacity 0.2s;
+  background: transparent !important;
+  outline: none;
 }
 @media (max-width: 768px) {
   .header .header__nav ul li a {
@@ -388,9 +390,15 @@
 .header .header__nav ul li a.active {
   opacity: 1;
   font-weight: 700;
+  background: transparent !important;
 }
 .header .header__nav ul li a:hover {
   opacity: 1;
+  background: transparent !important;
+}
+.header .header__nav ul li a:focus {
+  background: transparent !important;
+  outline: none;
 }
 .header .header__actions {
   display: flex;
@@ -1058,16 +1066,17 @@
   background: rgba(84, 189, 149, 0.1);
 }
 .pricing__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 32px;
   max-width: 1180px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 @media (max-width: 768px) {
   .pricing__cards {
-    display: grid;
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 24px;
   }
 }
@@ -1076,26 +1085,44 @@
   border-radius: 10px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 25px 20px;
+  padding: 40px 20px 25px 20px;
   text-align: center;
   position: relative;
   transition: all 0.3s ease;
   background: #ffffff;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  border-radius: 20px;
+  flex: 0 1 330px;
+  min-width: 330px;
 }
 .pricing__card--popular {
-  border: 2px solid #54bd95;
   transform: scale(1.05);
   background: #54bd95;
   color: #ffffff;
+  padding: 40px 0px 0px 0px;
+}
+.pricing__card--popular .pricing__semicircle-overlay-effect {
+  background: #6bc2a1;
+  border-radius: 50% 50% 0px 0px;
+  padding: 0px 25px 20px 25px;
+  width: 100%;
+  height: 130px;
+  position: relative;
+}
+.pricing__card--popular .pricing__overlay-effect {
+  background: #6bc2a1;
+  border-radius: 0px 0px 20px 20px;
+  padding: 0px 25px 20px 25px;
+  width: 100%;
+  height: auto;
+  position: relative;
 }
 .pricing__card--popular .pricing__card-header,
 .pricing__card--popular .price__type,
 .pricing__card--popular .pricing__card-subtitle,
 .pricing__card--popular .price__features li {
-  color: #191a15;
+  color: #ffffff;
 }
 .pricing__card--popular .price__amount {
   color: #ffffff;
@@ -1104,21 +1131,12 @@
   color: #ffffff;
 }
 .pricing__card--popular .price__period {
-  background: rgba(255, 255, 255, 0.2);
+  background: #85dab9;
   color: #ffffff;
-}
-.pricing__card--popular::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ffffff;
-  color: #54bd95;
-  padding: 6px 20px;
+  font-size: 14px;
+  line-height: 30px;
+  padding: 5px 10px 5px 11px;
   border-radius: 10px;
-  font-size: 12px;
-  font-weight: 700;
 }
 .pricing__card:hover {
   transform: translateY(-8px);
@@ -1127,16 +1145,15 @@
 .pricing__card:hover.pricing__card--popular {
   transform: scale(1.05) translateY(-8px);
 }
-.pricing__card-header {
-  margin-bottom: 32px;
-}
 .pricing__card-subtitle {
   font-size: 18px;
   color: #a6a6a6;
-  line-height: 30px;
+  line-height: 27px;
+  font-weight: 500;
+  margin-bottom: 13px;
 }
 .pricing__card-price {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
   position: relative;
 }
 
@@ -1147,13 +1164,13 @@
   margin-bottom: 10px;
 }
 .price__currency {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  color: #191a15;
+  color: #a6a6a6;
   vertical-align: top;
 }
 .price__amount {
-  font-size: 4rem;
+  font-size: 50px;
   font-weight: 700;
   color: #191a15;
   line-height: 1;
@@ -1196,7 +1213,6 @@
 }
 .price__features {
   list-style: none;
-  margin-bottom: 32px;
   text-align: left;
   flex-grow: 1;
 }
@@ -1210,6 +1226,7 @@
   font-size: 14px;
   color: #000000;
   font-weight: 500;
+  white-space: nowrap;
 }
 .price__features li::before {
   content: "✓";
