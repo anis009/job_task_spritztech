@@ -3,8 +3,8 @@
 @use "../mixins" as *;
 
 .pricing {
-  padding: 25px 20px;
-  background: $light-bg;
+  padding: 25px 20px 130px 20px;
+  background: transparent;
 
   &__container {
     text-align: center;

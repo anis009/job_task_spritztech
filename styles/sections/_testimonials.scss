@@ -4,7 +4,7 @@
 @use "../mixins" as *;
 
 .testimonials {
-  padding: 80px 0;
+  padding: 130px 0px;
   background: #161c28;
   color: #fff;
 
@@ -14,7 +14,7 @@
 
   &__container {
     display: flex;
-    gap: 60px;
+    gap: 101px;
     justify-content: space-between;
     align-items: flex-start;
 
@@ -26,7 +26,7 @@
   }
 
   &__main {
-    max-width: 520px;
+    max-width: 470px;
     flex: 1;
 
     @include responsive(tablet) {
@@ -36,11 +36,11 @@
   }
 
   &__title {
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 600;
     color: #fff;
-    margin-bottom: 24px;
-    line-height: 1.2;
+    margin-bottom: 20px;
+    line-height: 100%;
 
     @include responsive(tablet) {
       font-size: 36px;
@@ -53,11 +53,11 @@
   }
 
   &__desc {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 40px;
-    line-height: 1.6;
-    font-weight: 400;
+    font-size: 18px;
+    color: $text-gray-color;
+    margin-bottom: 42px;
+    line-height: 30px;
+    font-weight: 500;
 
     @include responsive(mobile) {
       font-size: 14px;
@@ -67,43 +67,28 @@
 
   &__quote {
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.9);
+    color: $text-gray-color;
+    margin-top: 40px;
     margin-bottom: 32px;
     font-style: normal;
-    line-height: 1.6;
-    font-weight: 400;
+    line-height: 30px;
+    font-weight: 500;
     position: relative;
 
     @include responsive(mobile) {
       font-size: 16px;
       margin-bottom: 24px;
     }
-
-    &::before {
-      content: '"';
-      font-size: 60px;
-      color: rgba(255, 255, 255, 0.3);
-      position: absolute;
-      top: -20px;
-      left: -30px;
-      font-family: serif;
-      line-height: 1;
-
-      @include responsive(mobile) {
-        font-size: 40px;
-        top: -15px;
-        left: -20px;
-      }
-    }
   }
 
   &__author {
     display: block;
-    margin-top: 20px;
-    font-size: 16px;
-    color: $primary-color;
+    margin-top: 40px;
+    font-size: 18px;
+    color: $text-gray-color;
     font-style: normal;
     font-weight: 500;
+    line-height: 30px;
 
     @include responsive(mobile) {
       font-size: 14px;
@@ -113,7 +98,7 @@
 
   &__avatars {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     align-items: center;
     margin-top: 40px;
 
@@ -170,10 +155,11 @@
 
   &__form {
     background: #222938;
-    border-radius: 16px;
-    padding: 40px 32px;
+    border-radius: 20px;
+    padding: 40px 86px 66px 86px;
     min-width: 360px;
     max-width: 612px;
+    width: 100%;
     flex-shrink: 0;
 
     @include responsive(tablet) {
@@ -201,7 +187,7 @@
       color: #fff;
       font-size: 24px;
       font-weight: 600;
-      margin-bottom: 32px;
+      margin-bottom: 10px;
       text-align: center;
       position: relative;
 
@@ -213,10 +199,9 @@
 
     label {
       color: #fff;
-      font-size: 14px;
+      font-size: 18px;
       font-weight: 500;
-      margin-bottom: 8px;
-      opacity: 0.9;
+      margin-bottom: 20px;
 
       @include responsive(mobile) {
         font-size: 13px;
@@ -228,7 +213,7 @@
       background: #fff;
       color: #222938;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
+      border-radius: $border-radius;
       padding: 16px;
       font-size: 14px;
       margin-bottom: 20px;
@@ -260,14 +245,17 @@
       background: $primary-color;
       color: #fff;
       font-weight: 600;
-      border-radius: 8px;
-      padding: 16px 24px;
+      border-radius: $border-radius;
+      padding: 21px 0px;
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
       font-size: 16px;
-      margin-top: 12px;
       box-shadow: 0 4px 16px rgba(56, 226, 143, 0.2);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       @include responsive(mobile) {
         padding: 14px 20px;
@@ -282,10 +270,10 @@
     }
 
     &-link {
-      color: rgba(255, 255, 255, 0.7);
+      color: $white;
       font-size: 14px;
       margin-top: 16px;
-      text-align: center;
+      text-align: right;
 
       @include responsive(mobile) {
         font-size: 13px;
@@ -293,7 +281,7 @@
       }
 
       a {
-        color: $primary-color;
+        color: $white;
         text-decoration: none;
         font-weight: 500;
         transition: opacity 0.2s ease;
