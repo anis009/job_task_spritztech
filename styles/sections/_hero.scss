@@ -233,7 +233,11 @@
       @include responsive(mobile) {
         top: 15px;
         right: -15px;
-        width: 80%;
+        height: auto;
+      }
+      @include responsive(small) {
+        top: 100px;
+        right: 10px;
         height: auto;
       }
 
@@ -263,7 +267,11 @@
       @include responsive(mobile) {
         bottom: 12px;
         right: -50px;
-        width: 80%;
+        height: auto;
+      }
+      @include responsive(small) {
+        bottom: 12px;
+        right: 1px;
         height: auto;
       }
 
@@ -293,7 +301,11 @@
       @include responsive(mobile) {
         bottom: 12px;
         left: -35px;
-        width: 80%;
+        height: auto;
+      }
+      @include responsive(small) {
+        bottom: -32px;
+        left: 10px;
         height: auto;
       }
 
@@ -323,7 +335,6 @@
       @include responsive(mobile) {
         bottom: -16px;
         right: 18px;
-        width: 70%;
         height: auto;
       }
 
@@ -352,8 +363,13 @@
 
       @include responsive(mobile) {
         top: 16px;
-        left: -90px;
-        width: 80%;
+        left: -50px;
+
+        height: auto;
+      }
+      @include responsive(small) {
+        top: 16px;
+        left: 16px;
         height: auto;
       }
 
@@ -383,7 +399,12 @@
       @include responsive(mobile) {
         top: 100px;
         left: -35px;
-        width: 70%;
+        height: auto;
+      }
+
+      @include responsive(small) {
+        top: 200px;
+        left: 10px;
         height: auto;
       }
 

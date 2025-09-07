@@ -782,7 +782,13 @@
   .hero .hero__visual .hero__db {
     top: 15px;
     right: -15px;
-    width: 80%;
+    height: auto;
+  }
+}
+@media (max-width: 530px) {
+  .hero .hero__visual .hero__db {
+    top: 100px;
+    right: 10px;
     height: auto;
   }
 }
@@ -813,7 +819,13 @@
   .hero .hero__visual .hero__card {
     bottom: 12px;
     right: -50px;
-    width: 80%;
+    height: auto;
+  }
+}
+@media (max-width: 530px) {
+  .hero .hero__visual .hero__card {
+    bottom: 12px;
+    right: 1px;
     height: auto;
   }
 }
@@ -844,7 +856,13 @@
   .hero .hero__visual .hero__income {
     bottom: 12px;
     left: -35px;
-    width: 80%;
+    height: auto;
+  }
+}
+@media (max-width: 530px) {
+  .hero .hero__visual .hero__income {
+    bottom: -32px;
+    left: 10px;
     height: auto;
   }
 }
@@ -875,7 +893,6 @@
   .hero .hero__visual .hero__chat {
     bottom: -16px;
     right: 18px;
-    width: 70%;
     height: auto;
   }
 }
@@ -905,8 +922,14 @@
 @media (max-width: 768px) {
   .hero .hero__visual .hero__amount {
     top: 16px;
-    left: -90px;
-    width: 80%;
+    left: -50px;
+    height: auto;
+  }
+}
+@media (max-width: 530px) {
+  .hero .hero__visual .hero__amount {
+    top: 16px;
+    left: 16px;
     height: auto;
   }
 }
@@ -937,7 +960,13 @@
   .hero .hero__visual .hero__check {
     top: 100px;
     left: -35px;
-    width: 70%;
+    height: auto;
+  }
+}
+@media (max-width: 530px) {
+  .hero .hero__visual .hero__check {
+    top: 200px;
+    left: 10px;
     height: auto;
   }
 }
@@ -1386,6 +1415,8 @@
 @media (max-width: 768px) {
   .features .features__title {
     font-size: 35px;
+    width: 100%;
+    text-align: center;
   }
 }
 .features .features__desc {

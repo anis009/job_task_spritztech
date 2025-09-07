@@ -42,6 +42,8 @@
     }
     @include responsive(mobile) {
       font-size: 35px;
+      width: 100%;
+      text-align: center;
     }
   }
   .features__desc {
