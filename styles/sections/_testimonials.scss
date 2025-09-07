@@ -65,6 +65,21 @@
     }
   }
 
+  .quote-logo {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+
+    @include responsive(tablet) {
+      justify-content: flex-start;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
   &__quote {
     font-size: 18px;
     color: $text-gray-color;
@@ -233,6 +248,14 @@
       &:focus {
         outline: none;
         border-color: $primary-color;
+      }
+    }
+
+    .quote-logo {
+      text-align: left;
+      img {
+        width: 40px;
+        height: 40px;
       }
     }
 

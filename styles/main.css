@@ -830,7 +830,7 @@
 
 /* Header Section Styles */
 .hero {
-  margin-top: 130px;
+  margin-top: 130px !important;
   background: transparent;
 }
 @media (max-width: 1400px) {
@@ -840,13 +840,13 @@
 }
 @media (max-width: 1024px) {
   .hero {
-    margin-top: 80px;
+    margin-top: 80px !important;
   }
 }
 @media (max-width: 768px) {
   .hero {
     padding: 2rem 0;
-    margin-top: 60px;
+    margin-top: 60px !important;
   }
 }
 .hero .hero__container {
@@ -2637,6 +2637,20 @@
     margin-bottom: 32px;
   }
 }
+.testimonials .quote-logo {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+@media (max-width: 1024px) {
+  .testimonials .quote-logo {
+    justify-content: flex-start;
+  }
+}
+.testimonials .quote-logo img {
+  width: 40px;
+  height: 40px;
+}
 .testimonials__quote {
   font-size: 18px;
   color: #a6a6a6;
@@ -2806,6 +2820,13 @@
 .testimonials__form textarea:focus {
   outline: none;
   border-color: #54bd95;
+}
+.testimonials__form .quote-logo {
+  text-align: left;
+}
+.testimonials__form .quote-logo img {
+  width: 40px;
+  height: 40px;
 }
 .testimonials__form textarea {
   min-height: 80px;

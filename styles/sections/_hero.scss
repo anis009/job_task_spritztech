@@ -3,7 +3,7 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 .hero {
-  margin-top: 130px;
+  margin-top: 130px !important;
   background: transparent;
 
   @include responsive(large) {
@@ -11,12 +11,12 @@
   }
 
   @include responsive(tablet) {
-    margin-top: 80px;
+    margin-top: 80px !important;
   }
 
   @include responsive(mobile) {
     padding: 2rem 0;
-    margin-top: 60px;
+    margin-top: 60px !important;
   }
 
   .hero__container {
