@@ -5,6 +5,11 @@
 .features {
   padding: 130px 0 80px 0;
   background: transparent;
+
+  @include responsive(tablet) {
+    text-align: center;
+    padding: 100px 0 60px 0;
+  }
   .features__container {
     display: flex;
     flex-direction: column;
@@ -30,12 +35,28 @@
     color: $secondary-text-color;
     margin-bottom: 0.5rem;
     max-width: 331px;
+    @include responsive(tablet) {
+      max-width: 100%;
+      font-size: 45px;
+      margin: auto;
+    }
+    @include responsive(mobile) {
+      font-size: 35px;
+    }
   }
   .features__desc {
     font-size: 18px;
     color: $text-gray-color;
     line-height: 30px;
     max-width: 461px;
+    @include responsive(tablet) {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    @include responsive(mobile) {
+      max-width: 100%;
+    }
   }
   .button--getstarted {
     background: $primary-color;
@@ -51,29 +72,41 @@
     &:hover {
       background: color.scale($accent-color, $lightness: -18%);
     }
+
+    @include responsive(tablet) {
+      margin: auto;
+    }
   }
   .features__cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 44px;
     justify-content: center;
-
     width: 100%;
     @include responsive(tablet) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 2rem;
+    }
+    @include responsive(mobile) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
   }
   .features__card {
     background: transparent;
-
     min-width: 260px;
     max-width: 364px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+
+    @include responsive(mobile) {
+      min-width: 80%;
+      max-width: 100%;
+      margin: auto;
+    }
 
     h3 {
       font-size: 30px;

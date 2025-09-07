@@ -15,13 +15,25 @@
   }
   .benefits__main {
     max-width: 500px;
+    @include responsive(tablet) {
+      max-width: 100%;
+    }
   }
   .benefits__title {
     font-size: 50px;
     font-weight: 700;
     color: $secondary-text-color;
     margin-bottom: 50px;
+    max-width: 429px;
+    @include responsive(tablet) {
+      font-size: 40px;
+      margin-bottom: 30px;
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+    }
   }
+
   .benefits__list {
     list-style: none;
     padding: 0;
@@ -42,33 +54,53 @@
   .benefits__visual {
     position: relative;
     min-width: 340px;
-
+    @include responsive(tablet) {
+      text-align: center;
+    }
     .benefits__image-bg {
       max-width: 450px;
       max-height: 529px;
-
       border-radius: $border-radius;
+      @include responsive(tablet) {
+        max-width: 100%;
+        margin: auto;
+      }
     }
 
     .benefits__extra-saving {
       position: absolute;
       top: 36px;
       left: -200px;
+      @include responsive(tablet) {
+        left: 2%;
+        top: 1%;
+      }
     }
     .benefits__income {
       position: absolute;
       top: 121px;
       right: -78px;
+      @include responsive(tablet) {
+        right: 15%;
+        top: 50%;
+      }
     }
     .benefits__transfer {
       position: absolute;
       bottom: -23px;
       left: -113px;
+      @include responsive(tablet) {
+        left: 10%;
+        bottom: -5%;
+      }
     }
     .benefits__image {
       position: absolute;
       left: -73px;
       top: 275px;
+      @include responsive(tablet) {
+        left: 20%;
+      }
     }
   }
 }

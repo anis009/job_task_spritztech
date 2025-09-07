@@ -239,9 +239,14 @@
     background: #161c28;
     padding-top: 60px;
     margin-top: 0;
-    display: flex;
     justify-content: space-between;
     align-items: center;
+    @include responsive(tablet) {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+    }
   }
 
   &__copyright {
@@ -250,6 +255,9 @@
     margin: 0;
     line-height: 30px;
     font-weight: 500;
+    @include responsive(tablet) {
+      text-align: center;
+    }
     @include responsive(mobile) {
       font-size: 13px;
     }
@@ -265,6 +273,12 @@
     padding: 0;
     border: none;
     font-weight: 500;
+
+    @include responsive(tablet) {
+      text-align: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
 
     @include responsive(mobile) {
       font-size: 13px;

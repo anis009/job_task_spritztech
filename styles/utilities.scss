@@ -128,10 +128,29 @@
   }
 }
 
+.hidden-tablet-down {
+  @include responsive(tablet) {
+    display: none;
+  }
+  @include responsive(mobile) {
+    display: none;
+  }
+}
+
 .show-mobile {
   display: none;
   @include responsive(mobile) {
     display: block;
+  }
+}
+
+// Specific utility for line breaks
+.br-desktop-only {
+  @include responsive(tablet) {
+    display: none;
+  }
+  @include responsive(mobile) {
+    display: none;
   }
 }
 
