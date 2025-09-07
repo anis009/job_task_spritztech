@@ -1894,8 +1894,8 @@
 }
 @media (max-width: 768px) {
   .pricing__card--popular .pricing__semicircle {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
   }
 }
 .pricing__card--popular .pricing__semicircle_body {
