@@ -6,8 +6,17 @@
   margin-top: 130px;
   background: transparent;
 
+  @include responsive(large) {
+    margin-top: 100px;
+  }
+
+  @include responsive(tablet) {
+    margin-top: 80px;
+  }
+
   @include responsive(mobile) {
     padding: 2rem 0;
+    margin-top: 60px;
   }
 
   .hero__container {
@@ -15,6 +24,10 @@
     align-items: center;
     justify-content: space-between;
     gap: 35px;
+
+    @include responsive(large) {
+      gap: 25px;
+    }
 
     @include responsive(tablet) {
       flex-direction: column;
@@ -29,6 +42,15 @@
   .hero__content {
     max-width: 540px;
 
+    @include responsive(large) {
+      max-width: 480px;
+    }
+
+    @include responsive(tablet) {
+      max-width: 100%;
+      text-align: center;
+    }
+
     @include responsive(mobile) {
       text-align: center;
     }
@@ -41,8 +63,16 @@
     line-height: 90px;
     margin-bottom: 30px;
 
+    @include responsive(large) {
+      font-size: 70px;
+      line-height: 80px;
+      margin-bottom: 25px;
+    }
+
     @include responsive(tablet) {
       font-size: 2.5rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
     }
 
     @include responsive(mobile) {
@@ -52,16 +82,7 @@
   }
 
   .hero__underline {
-    // width: 80%;
-    // height: 4px;
-    // background: $primary-color;
-    // border-radius: 2px;
-    // margin: 1rem 0 2rem 0;
     margin-bottom: 50px;
-
-    // @include responsive(mobile) {
-    //   margin: 0.5rem auto 1.5rem auto;
-    // }
   }
 
   .hero__desc {
@@ -70,6 +91,19 @@
     color: $text-color;
     margin-bottom: 50px;
     font-weight: 500;
+
+    @include responsive(large) {
+      font-size: 16px;
+      line-height: 28px;
+      margin-bottom: 40px;
+    }
+
+    @include responsive(tablet) {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
     @include responsive(mobile) {
       font-size: 1rem;
       margin-bottom: 1.5rem;
@@ -81,6 +115,17 @@
     gap: 1.5rem;
     align-items: center;
     position: relative;
+
+    @include responsive(large) {
+      gap: 1.2rem;
+    }
+
+    @include responsive(tablet) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+    }
+
     @include responsive(mobile) {
       flex-direction: column;
       gap: 1rem;
@@ -95,9 +140,26 @@
       padding: 20px 30px;
       box-shadow: 0 2px 8px rgba(56, 226, 143, 0.12);
 
+      @include responsive(large) {
+        padding: 18px 28px;
+        font-size: 16px;
+      }
+
+      @include responsive(tablet) {
+        padding: 16px 24px;
+        font-size: 15px;
+      }
+
+      @include responsive(mobile) {
+        padding: 14px 20px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 200px;
+      }
+
       &:hover {
         background: color.scale($primary-color, $lightness: -18%);
-        transform: translateY(-2px);
+        transform: $transform-hover;
       }
     }
 
@@ -109,6 +171,18 @@
       align-items: center;
       gap: 0.5rem;
 
+      @include responsive(large) {
+        font-size: 16px;
+      }
+
+      @include responsive(tablet) {
+        font-size: 15px;
+      }
+
+      @include responsive(mobile) {
+        font-size: 14px;
+      }
+
       &:hover {
         opacity: 1;
       }
@@ -119,9 +193,16 @@
     min-width: 340px;
     position: relative;
 
-    @include responsive(mobile) {
+    @include responsive(large) {
+      min-width: 300px;
+    }
+
+    @include responsive(tablet) {
       min-width: 280px;
-      transform: scale(0.8);
+    }
+
+    @include responsive(mobile) {
+      min-width: 240px;
     }
 
     .hero__card-group {
@@ -133,35 +214,185 @@
       gap: 1.5rem;
       z-index: 2;
     }
+
     .hero__db {
       position: absolute;
       top: 26px;
       right: -34px;
+
+      @include responsive(large) {
+        top: 22px;
+        right: -28px;
+      }
+
+      @include responsive(tablet) {
+        top: 18px;
+        right: -22px;
+      }
+
+      @include responsive(mobile) {
+        top: 15px;
+        right: -15px;
+        width: 80%;
+        height: auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
     }
+
     .hero__card {
       position: absolute;
       bottom: 21px;
       right: -111px;
+
+      @include responsive(large) {
+        bottom: 18px;
+        right: -60px;
+      }
+
+      @include responsive(tablet) {
+        bottom: 15px;
+        right: -70px;
+      }
+
+      @include responsive(mobile) {
+        bottom: 12px;
+        right: -50px;
+        width: 80%;
+        height: auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
     }
+
     .hero__income {
       position: absolute;
       bottom: 21px;
       left: -73px;
+
+      @include responsive(large) {
+        bottom: 18px;
+        left: -62px;
+      }
+
+      @include responsive(tablet) {
+        bottom: 15px;
+        left: -45px;
+      }
+
+      @include responsive(mobile) {
+        bottom: 12px;
+        left: -35px;
+        width: 80%;
+        height: auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
     }
+
     .hero__chat {
       position: absolute;
       bottom: -28px;
       right: 31px;
+
+      @include responsive(large) {
+        bottom: -24px;
+        right: 26px;
+      }
+
+      @include responsive(tablet) {
+        bottom: -20px;
+        right: 22px;
+      }
+
+      @include responsive(mobile) {
+        bottom: -16px;
+        right: 18px;
+        width: 70%;
+        height: auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
     }
+
     .hero__amount {
       position: absolute;
       top: 30px;
       left: -182px;
+
+      @include responsive(large) {
+        top: 25px;
+        left: -150px;
+      }
+
+      @include responsive(tablet) {
+        top: 20px;
+        left: -120px;
+      }
+
+      @include responsive(mobile) {
+        top: 16px;
+        left: -90px;
+        width: 80%;
+        height: auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
     }
+
     .hero__check {
       position: absolute;
       top: 173px;
       left: -65px;
+
+      @include responsive(large) {
+        top: 148px;
+        left: -55px;
+      }
+
+      @include responsive(tablet) {
+        top: 125px;
+        left: -45px;
+      }
+
+      @include responsive(mobile) {
+        top: 100px;
+        left: -35px;
+        width: 70%;
+        height: auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+      }
     }
 
     .hero__visual__image {
@@ -171,13 +402,28 @@
       position: absolute;
       top: 0px;
       right: -40px;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+
+      @include responsive(large) {
+        height: 480px;
+        width: 600px;
+        right: -35px;
+      }
+
       @include responsive(tablet) {
         width: 100%;
         max-width: 500px;
+        height: auto;
+        position: relative;
+        right: 0;
+        top: 0;
       }
+
       @include responsive(mobile) {
         width: 100%;
         max-width: 300px;
+        height: auto;
       }
     }
 
@@ -191,6 +437,27 @@
       margin-left: 60px;
       margin-top: 30px;
       box-shadow: 0 4px 32px rgba(255, 214, 0, 0.12);
+
+      @include responsive(large) {
+        width: 280px;
+        height: 300px;
+        margin-left: 50px;
+        margin-top: 25px;
+      }
+
+      @include responsive(tablet) {
+        width: 250px;
+        height: 280px;
+        margin-left: 40px;
+        margin-top: 20px;
+      }
+
+      @include responsive(mobile) {
+        width: 200px;
+        height: 220px;
+        margin-left: 30px;
+        margin-top: 15px;
+      }
     }
   }
 }

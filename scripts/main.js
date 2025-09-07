@@ -2,30 +2,92 @@
 // Add interactivity (e.g., smooth scrolling, hover effects) here
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Smooth scrolling for navigation links
+  // Enhanced smooth scrolling for navigation links
   const links = document.querySelectorAll('a[href^="#"]');
   links.forEach((link) => {
     link.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
+      const targetId = this.getAttribute("href");
+      const target = document.querySelector(targetId);
+
       if (target) {
-        target.scrollIntoView({
+        // Calculate offset for fixed header
+        const headerHeight =
+          document.querySelector(".header")?.offsetHeight || 0;
+        const targetPosition = target.offsetTop - headerHeight - 20;
+        // Smooth scroll with custom easing
+        window.scrollTo({
+          top: targetPosition,
           behavior: "smooth",
-          block: "start",
         });
+
+        // Update URL without triggering scroll
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        }
       }
     });
   });
 
-  // Mobile menu toggle (if needed later)
+  // Mobile menu toggle functionality
   const mobileMenuToggle = () => {
+    const toggle = document.querySelector(".header__mobile-toggle");
     const nav = document.querySelector(".header__nav");
-    const burger = document.querySelector(".header__burger");
+    const actions = document.querySelector(".header__actions");
+    const overlay = document.querySelector(".header__overlay");
 
-    if (burger && nav) {
-      burger.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        burger.classList.toggle("active");
+    if (toggle && nav && actions && overlay) {
+      // Toggle mobile menu
+      toggle.addEventListener("click", () => {
+        const isActive = toggle.classList.contains("active");
+
+        if (isActive) {
+          // Close menu
+          toggle.classList.remove("active");
+          nav.classList.remove("active");
+          actions.classList.remove("active");
+          overlay.classList.remove("active");
+          document.body.style.overflow = "";
+        } else {
+          // Open menu
+          toggle.classList.add("active");
+          nav.classList.add("active");
+          actions.classList.add("active");
+          overlay.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+      });
+
+      // Close menu when clicking on overlay
+      overlay.addEventListener("click", () => {
+        toggle.classList.remove("active");
+        nav.classList.remove("active");
+        actions.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+
+      // Close menu when clicking on nav links
+      const navLinks = nav.querySelectorAll("a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          toggle.classList.remove("active");
+          nav.classList.remove("active");
+          actions.classList.remove("active");
+          overlay.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+      });
+
+      // Close menu on window resize if desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          toggle.classList.remove("active");
+          nav.classList.remove("active");
+          actions.classList.remove("active");
+          overlay.classList.remove("active");
+          document.body.style.overflow = "";
+        }
       });
     }
   };

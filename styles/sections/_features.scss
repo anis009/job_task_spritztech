@@ -49,7 +49,7 @@
     font-size: 18px;
     line-height: 30px;
     &:hover {
-      background: color.scale(#38e28f, $lightness: -18%);
+      background: color.scale($accent-color, $lightness: -18%);
     }
   }
   .features__cards {

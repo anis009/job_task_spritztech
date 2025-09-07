@@ -46,3 +46,39 @@ $large-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 
 // Transitions
 $transition-medium: all 0.3s ease;
+$transition-fast: all 0.2s ease;
+
+// Common colors that appear frequently (maintain exact values)
+$accent-color: #38e28f;
+$yellow-accent: #ffd600;
+$success-color: #38e28f;
+
+// Common shadow variations (maintain exact values)
+$small-shadow: 0 2px 8px rgba(56, 226, 143, 0.12);
+$yellow-shadow: 0 4px 32px rgba(255, 214, 0, 0.12);
+
+// Common transform values
+$transform-hover: translateY(-2px);
+$transform-entrance: translateY(30px);
+
+// Common border radius variations (maintain exact values)
+$border-radius-small: 2px;
+$border-radius-medium: 12px;
+
+// Common percentage values
+$width-full: 100%;
+$width-80: 80%;
+
+// Z-index scale
+$z-index-base: 1;
+$z-index-overlay: 2;
+$z-index-modal: 10;
+$z-index-tooltip: 20;
+
+// Rem-based spacing system (for utilities only - don't change existing px values)
+$spacing-rem-xs: 0.5rem; // 8px
+$spacing-rem-sm: 1rem; // 16px
+$spacing-rem-md: 1.5rem; // 24px
+$spacing-rem-lg: 2rem; // 32px
+$spacing-rem-xl: 2.5rem; // 40px
+$spacing-rem-xxl: 3rem; // 48px

@@ -24,6 +24,67 @@ body {
   padding: 0;
 }
 
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 6px;
+  border: 2px solid #f1f1f1;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color.scale($primary-color, $lightness: -15%);
+}
+
+/* Custom scrollbar for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: $primary-color #f1f1f1;
+}
+
+/* Smooth scrolling for specific elements */
+.header__nav,
+.mobile-menu {
+  scroll-behavior: smooth;
+}
+
+/* Image optimization to prevent blur */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  max-width: 100%;
+  height: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Prevent blur on transforms */
+* {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+}
+
 .main-sections {
   background: linear-gradient(
     110deg,
