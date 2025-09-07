@@ -4,8 +4,15 @@
 
 .pricing {
   padding: 25px 20px 130px 20px;
-
   background: transparent;
+
+  @include responsive(tablet) {
+    padding: 40px 20px 80px 20px;
+  }
+
+  @include responsive(mobile) {
+    padding: 30px 15px 60px 15px;
+  }
 
   &__container {
     text-align: center;
@@ -14,6 +21,16 @@
   &__title {
     @include section-title;
     margin-bottom: 40px;
+
+    @include responsive(tablet) {
+      margin-bottom: 30px;
+    }
+
+    @include responsive(mobile) {
+      margin-bottom: 20px;
+      font-size: 28px;
+      line-height: 1.3;
+    }
   }
 
   &__description {
@@ -23,6 +40,19 @@
     font-weight: 700;
     margin-left: auto;
     margin-right: auto;
+
+    @include responsive(tablet) {
+      margin-bottom: 35px;
+      max-width: 500px;
+    }
+
+    @include responsive(mobile) {
+      margin-bottom: 30px;
+      max-width: 100%;
+      font-size: 16px;
+      line-height: 1.5;
+      padding: 0 10px;
+    }
   }
 
   &__toggle {
@@ -37,6 +67,18 @@
     margin-right: auto;
     box-shadow: $medium-shadow;
 
+    @include responsive(tablet) {
+      margin-bottom: 60px;
+      max-width: 300px;
+    }
+
+    @include responsive(mobile) {
+      margin-bottom: 40px;
+      max-width: 280px;
+      gap: 5px;
+      padding: 3px;
+    }
+
     &-btn {
       @include button-base;
       padding: 13px 40px;
@@ -48,6 +90,16 @@
       border: none;
       flex: 1;
       white-space: nowrap;
+
+      @include responsive(tablet) {
+        padding: 12px 30px;
+        font-size: 13px;
+      }
+
+      @include responsive(mobile) {
+        padding: 10px 20px;
+        font-size: 12px;
+      }
 
       &--active {
         background: $primary-color;
@@ -64,15 +116,22 @@
   &__cards {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: $space-lg;
     max-width: 1180px;
     margin: 0 auto;
     flex-wrap: wrap;
 
+    @include responsive(tablet) {
+      gap: $space-md;
+      max-width: 100%;
+      align-items: center;
+    }
+
     @include responsive(mobile) {
       flex-direction: column;
       gap: $space-md;
+      align-items: center;
     }
   }
 
@@ -90,11 +149,37 @@
     min-width: 330px;
     overflow: hidden;
 
+    @include responsive(tablet) {
+      flex: 0 1 300px;
+      min-width: 280px;
+      padding: 35px 18px 20px 18px;
+    }
+
+    @include responsive(mobile) {
+      flex: 1;
+      min-width: 280px;
+      max-width: 350px;
+      width: 100%;
+      padding: 30px 20px 20px 20px;
+      margin: 0 auto;
+    }
+
     &--popular {
       transform: scale(1.05);
       background: $primary-color;
       color: $white;
       padding: 40px 0px 0px 0px;
+
+      @include responsive(tablet) {
+        transform: scale(1.02);
+        padding: 35px 0px 0px 0px;
+      }
+
+      @include responsive(mobile) {
+        transform: none;
+        padding: 30px 0px 0px 0px;
+        margin: 20px auto;
+      }
 
       .pricing__overlay-container {
         position: relative;
@@ -110,10 +195,28 @@
         left: 50%;
         transform: translateX(-50%);
         z-index: -1;
+
+        @include responsive(tablet) {
+          width: 500px;
+          height: 500px;
+        }
+
+        @include responsive(mobile) {
+          width: 400px;
+          height: 400px;
+        }
       }
       .pricing__semicircle_body {
         background: transparent;
         padding: 0px 20px 25px 20px;
+
+        @include responsive(tablet) {
+          padding: 0px 18px 20px 18px;
+        }
+
+        @include responsive(mobile) {
+          padding: 0px 20px 20px 20px;
+        }
       }
       .pricing__card-header,
       .price__type,
@@ -137,6 +240,12 @@
         line-height: 30px;
         padding: 5px 10px 5px 11px;
         border-radius: $border-radius;
+
+        @include responsive(mobile) {
+          font-size: 12px;
+          line-height: 24px;
+          padding: 4px 8px;
+        }
       }
     }
 
@@ -144,8 +253,20 @@
       transform: translateY(-8px);
       box-shadow: $large-shadow;
 
+      @include responsive(mobile) {
+        transform: translateY(-4px);
+      }
+
       &.pricing__card--popular {
         transform: scale(1.05) translateY(-8px);
+
+        @include responsive(tablet) {
+          transform: scale(1.02) translateY(-6px);
+        }
+
+        @include responsive(mobile) {
+          transform: translateY(-4px);
+        }
       }
     }
 
@@ -155,15 +276,39 @@
       line-height: 27px;
       font-weight: 500;
       margin-bottom: 13px;
+
+      @include responsive(tablet) {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 12px;
+      }
+
+      @include responsive(mobile) {
+        font-size: 15px;
+        line-height: 22px;
+        margin-bottom: 10px;
+      }
     }
 
     &-price:not(.pricing__card-price-popular) {
       margin-bottom: 30px;
       position: relative;
+
+      @include responsive(tablet) {
+        margin-bottom: 25px;
+      }
+
+      @include responsive(mobile) {
+        margin-bottom: 20px;
+      }
     }
     &-price-popular {
       margin-bottom: 15px;
       position: relative;
+
+      @include responsive(mobile) {
+        margin-bottom: 12px;
+      }
     }
   }
 }
@@ -174,6 +319,16 @@
     font-weight: 600;
     color: $secondary-text-color;
     margin-bottom: 10px;
+
+    @include responsive(tablet) {
+      font-size: 26px;
+      margin-bottom: 8px;
+    }
+
+    @include responsive(mobile) {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
   }
 
   &__currency {
@@ -181,6 +336,14 @@
     font-weight: $font-weight-semibold;
     color: $text-gray-color;
     vertical-align: top;
+
+    @include responsive(tablet) {
+      font-size: 16px;
+    }
+
+    @include responsive(mobile) {
+      font-size: 14px;
+    }
   }
 
   &__amount {
@@ -188,6 +351,14 @@
     font-weight: $font-weight-bold;
     color: $secondary-text-color;
     line-height: 1;
+
+    @include responsive(tablet) {
+      font-size: 44px;
+    }
+
+    @include responsive(mobile) {
+      font-size: 40px;
+    }
 
     .pricing__card--popular & {
       color: $white;
@@ -207,6 +378,12 @@
     width: fit-content;
     font-weight: $font-weight-medium;
 
+    @include responsive(mobile) {
+      font-size: 11px;
+      padding: 3px 10px;
+      margin-top: 12px;
+    }
+
     .pricing__card:not(.pricing__card--popular) & {
       background: $primary-color;
       color: $white;
@@ -219,6 +396,14 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+
+    @include responsive(tablet) {
+      padding: 22px 26px 20px 30px;
+    }
+
+    @include responsive(mobile) {
+      padding: 20px 25px 18px 28px;
+    }
   }
   &__features_container--popular {
     background: #fff;
@@ -227,10 +412,17 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+
+    @include responsive(tablet) {
+      padding: 22px 26px 20px 30px;
+    }
+
+    @include responsive(mobile) {
+      padding: 20px 25px 18px 28px;
+    }
   }
   &__features {
     list-style: none;
-
     text-align: left;
     flex-grow: 1;
 
@@ -244,6 +436,20 @@
       font-weight: $font-weight-medium;
       white-space: nowrap;
 
+      @include responsive(tablet) {
+        gap: 10px;
+        margin-bottom: 14px;
+        font-size: 13px;
+      }
+
+      @include responsive(mobile) {
+        gap: 10px;
+        margin-bottom: 12px;
+        font-size: 13px;
+        white-space: normal;
+        line-height: 1.4;
+      }
+
       &::before {
         content: "✓";
         color: $white;
@@ -255,6 +461,18 @@
         border-radius: 50%;
         @include flex-center;
         flex-shrink: 0;
+
+        @include responsive(tablet) {
+          width: 18px;
+          height: 18px;
+          font-size: 12px;
+        }
+
+        @include responsive(mobile) {
+          width: 16px;
+          height: 16px;
+          font-size: 11px;
+        }
 
         .pricing__card--popular & {
           color: $white;
@@ -278,6 +496,16 @@
     box-shadow: 0 4px 12px rgba(56, 226, 143, 0.15);
     transition: all 0.3s ease;
 
+    @include responsive(tablet) {
+      padding: 14px 20px;
+      font-size: 13px;
+    }
+
+    @include responsive(mobile) {
+      padding: 12px 18px;
+      font-size: 13px;
+    }
+
     &--primary {
       background: $primary-color;
       color: $white;
@@ -288,6 +516,10 @@
         color: $primary-color;
         box-shadow: 0 6px 20px rgba(56, 226, 143, 0.35);
         transform: translateY(-2px);
+
+        @include responsive(mobile) {
+          transform: translateY(-1px);
+        }
       }
     }
 
@@ -302,6 +534,10 @@
         color: $white;
         box-shadow: 0 6px 16px rgba(56, 226, 143, 0.25);
         transform: translateY(-2px);
+
+        @include responsive(mobile) {
+          transform: translateY(-1px);
+        }
       }
     }
   }
