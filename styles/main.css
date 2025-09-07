@@ -799,7 +799,7 @@
 
 .features {
   padding: 130px 0 80px 0;
-  background: linear-gradient(120deg, #f5f6fa 0%, #eafaf3 100%);
+  background: transparent;
 }
 .features .features__container {
   display: flex;
@@ -1094,6 +1094,7 @@
   border-radius: 20px;
   flex: 0 1 330px;
   min-width: 330px;
+  overflow: hidden;
 }
 .pricing__card--popular {
   transform: scale(1.05);
@@ -1101,21 +1102,23 @@
   color: #ffffff;
   padding: 40px 0px 0px 0px;
 }
-.pricing__card--popular .pricing__semicircle-overlay-effect {
-  background: #6bc2a1;
-  border-radius: 50% 50% 0px 0px;
-  padding: 0px 25px 20px 25px;
-  width: 100%;
-  height: 130px;
+.pricing__card--popular .pricing__overlay-container {
   position: relative;
+  overflow: hidden;
 }
-.pricing__card--popular .pricing__overlay-effect {
+.pricing__card--popular .pricing__semicircle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
   background: #6bc2a1;
-  border-radius: 0px 0px 20px 20px;
-  padding: 0px 25px 20px 25px;
-  width: 100%;
-  height: auto;
-  position: relative;
+  border-radius: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+.pricing__card--popular .pricing__semicircle_body {
+  background: transparent;
+  padding: 0px 20px 25px 20px;
 }
 .pricing__card--popular .pricing__card-header,
 .pricing__card--popular .price__type,
@@ -1151,8 +1154,12 @@
   font-weight: 500;
   margin-bottom: 13px;
 }
-.pricing__card-price {
+.pricing__card-price:not(.pricing__card-price-popular) {
   margin-bottom: 30px;
+  position: relative;
+}
+.pricing__card-price-popular {
+  margin-bottom: 15px;
   position: relative;
 }
 
@@ -1184,7 +1191,7 @@
   background: #54bd95;
   padding: 4px 12px;
   border-radius: 10px;
-  margin-top: 8px;
+  margin-top: 16px;
   margin-left: auto;
   margin-right: auto;
   width: fit-content;
@@ -1856,6 +1863,10 @@ body {
   color: #222;
   margin: 0;
   padding: 0;
+}
+
+.main-sections {
+  background: linear-gradient(110deg, rgb(255, 249, 249) 53%, rgb(215, 240, 231) 99%);
 }
 
 /*# sourceMappingURL=main.css.map */
