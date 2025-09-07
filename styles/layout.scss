@@ -1,6 +1,11 @@
+@use "variables" as *;
+@use "mixins" as *;
 /* Layout styles for main containers */
+
 .container {
   max-width: 1180px;
   margin: 0 auto;
-  // padding: 0 1rem;
+  @include responsive(tablet) {
+    padding: 0 1rem;
+  }
 }
