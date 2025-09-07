@@ -18,7 +18,17 @@
         <div class="container header__container">
           <div class="header__logo">Biccas</div>
 
-          <nav class="header__nav">
+          <!-- Mobile Menu Toggle Button -->
+          <button
+            class="mobile-menu-toggle"
+            aria-label="Toggle navigation menu"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+
+          <nav class="header__nav" id="mobile-nav">
             <ul>
               <li><a href="#" class="active">Home</a></li>
               <li><a href="#">Product</a></li>
@@ -33,6 +43,32 @@
           </div>
         </div>
       </header>
+      <div id="toggle-content" class="toggle-content">
+        <!-- Simple Header with Logo and Close Button -->
+        <div class="toggle-content__header">
+          <div class="toggle-content__logo">Biccas</div>
+          <button class="toggle-close-btn" aria-label="Close menu">
+            <span>&times;</span>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+
+        <nav class="toggle-content__nav">
+          <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#"> Blog</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </nav>
+
+        <div class="toggle-content__actions">
+          <a href="#" class="toggle-content__login">Login</a>
+          <a href="#" class="button button--signup">Sign Up</a>
+        </div>
+      </div>
       <section class="hero">
         <div class="container hero__container">
           <div class="hero__content">
@@ -54,7 +90,7 @@
               >
             </div>
           </div>
-          <div style="" class="hero__visual">
+          <div class="hero__visual">
             <img src="assets/hero-person.png" class="" alt="Hero Visual" />
             <img class="hero__db" src="assets/db.svg" alt="Db" />
             <img class="hero__card" src="assets/card.svg" alt="Card" />
@@ -62,8 +98,6 @@
             <img class="hero__chat" src="assets/chat.svg" alt="Chat" />
             <img class="hero__check" src="assets/check.svg" alt="Chat" />
             <img class="hero__amount" src="assets/amount.svg" alt="Chat" />
-
-            <!-- Add image in assets and reference here for final build -->
           </div>
         </div>
       </section>

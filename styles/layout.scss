@@ -5,7 +5,5 @@
 .container {
   max-width: 1180px;
   margin: 0 auto;
-  @include responsive(tablet) {
-    padding: 0 1rem;
-  }
+  padding: 0 1rem;
 }

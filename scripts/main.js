@@ -2,6 +2,66 @@
 // Add interactivity (e.g., smooth scrolling, hover effects) here
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Mobile Menu Toggle Functionality
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+  const mobileNav = document.querySelector("#mobile-nav");
+  const toggleDiv = document.querySelector("#toggle-content");
+  const toggleCloseBtn = document.querySelector(".toggle-close-btn");
+  const body = document.body;
+
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener("click", function () {
+      // Toggle the active class on the hamburger button
+      this.classList.toggle("active");
+
+      // Only toggle the toggle content, not the original header nav
+      if (toggleDiv) {
+        toggleDiv.classList.toggle("toggle-open");
+      }
+
+      // Prevent body scroll when menu is open
+      body.classList.toggle("menu-open");
+    });
+
+    // Close button functionality
+    if (toggleCloseBtn) {
+      toggleCloseBtn.addEventListener("click", function () {
+        mobileMenuToggle.classList.remove("active");
+        if (toggleDiv) {
+          toggleDiv.classList.remove("toggle-open");
+        }
+        body.classList.remove("menu-open");
+      });
+    }
+
+    // Close menu when clicking on nav links in toggle content
+    const toggleNavLinks = toggleDiv ? toggleDiv.querySelectorAll("a") : [];
+
+    toggleNavLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        mobileMenuToggle.classList.remove("active");
+        if (toggleDiv) {
+          toggleDiv.classList.remove("toggle-open");
+        }
+        body.classList.remove("menu-open");
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (e) {
+      if (
+        !mobileMenuToggle.contains(e.target) &&
+        (!toggleDiv || !toggleDiv.contains(e.target))
+      ) {
+        mobileMenuToggle.classList.remove("active");
+        if (toggleDiv) {
+          toggleDiv.classList.remove("toggle-open");
+        }
+        body.classList.remove("menu-open");
+      }
+    });
+  }
+
   // Enhanced smooth scrolling for navigation links
   const links = document.querySelectorAll('a[href^="#"]');
   links.forEach((link) => {
